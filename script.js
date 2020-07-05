@@ -1,3 +1,8 @@
+AOS.init({
+    duration: 2000,
+    offset: 200,
+})
+
 const hamburger = document.querySelector('.hamburger');
 const nav = document.querySelector('.navigation');
 
