@@ -5,6 +5,10 @@
   font-size: 62.5%;
 }
 
+body {
+  background-color: #27282a;
+}
+
 a {
   font-size: inherit;
   font-weight: inherit;
@@ -21,14 +25,15 @@ a:hover {
 
 /* Navigation */
 .navBar {
-  width: 130px;
-  height: 100vh;
+  width: 10%;
+  height: 90vh;
   position: fixed;
   display: flex;
+  bottom: 0;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  background-color: #000;
+  background-image: linear-gradient(transparent, #000);
   z-index: 10;
 }
 
@@ -114,7 +119,7 @@ a:hover {
 }
 
 .navigation--active {
-  transform: translateX(130px);
+  transform: translateX(95px);
 }
 
 .navigation__list {
@@ -144,7 +149,7 @@ a:hover {
   align-items: flex-end;
   bottom: 8vh;
   color: #fff;
-  font-size: 24em;
+  font-size: 20em;
 }
 
 .facebook,
@@ -180,17 +185,18 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(./image/hero.png);
-  background-size: cover;
+  background-image: url(./image/hero.jpg);
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   z-index: -1;
 }
 
 .hero__cover {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .logo__box {
@@ -198,6 +204,9 @@ a:hover {
   height: 60%;
   position: absolute;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   top: 20%;
   z-index: 3;
 }
@@ -212,29 +221,19 @@ a:hover {
   background-repeat: no-repeat;
   background-size: contain;
   opacity: 0;
-  animation: logo 2s ease-in 0.4s forwards;
+  animation: logo 4s linear 0.2s forwards;
 }
 
-.title::before {
-  content: "";
-  width: 0;
-  height: 0;
-  position: absolute;
-  top: -10%;
-  left: -20%;
-  border: 3px solid transparent;
-  animation: lines 4s ease-in-out 2.4s 1 forwards;
+.arrow {
+  position: relative;
+  top: 30%;
+  font-size: 5rem;
+  color: #fff;
 }
 
-.title::after {
-  content: "";
-  width: 0;
-  height: 0;
-  position: absolute;
-  top: -10%;
-  left: -20%;
-  border: 3px solid transparent;
-  animation: lines2 4s ease-in-out 2.4s 1 forwards;
+.arrow:hover {
+  cursor: pointer;
+  animation: slide 0.7s ease-in-out 0.2s 1 forwards;
 }
 
 /* About Alex */
@@ -242,30 +241,74 @@ a:hover {
 .alex {
   width: 100%;
   height: 100vh;
-  display: grid;
-  grid-template-columns: 15% 40% 40%;
-  grid-template-rows: 90%;
-  padding-top: 5%;
-  background-color: #000;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
+.grid-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 13% 30% 18% 35%;
+  grid-template-rows: 12% 44% 44%;
+  gap: 0% 0px;
+  grid-template-areas: "empty sign sign sign ." "empty text text portrait ." "empty text text portrait .";
+}
+
+.empty {
+  grid-area: empty;
+}
 .text {
+  height: 65%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 15% 0 auto 15%;
+  grid-area: text;
   padding: 5% 5% 0 5%;
   text-align: center;
-  line-height: 1.5;
-  color: #fff;
-  font-size: 2rem;
+  line-height: 1.8;
+  color: #f2f0eb;
+  font-size: 1.5rem;
   font-weight: 500;
-  border: 1px solid #d4af37;
-  border-radius: 10px;
+  border: 1px solid #bda182;
+}
+
+.sign {
+  grid-area: sign;
+  background-image: url(./image/alex_sign.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  top: 60%;
+  right: -57%;
 }
 
 .portrait {
+  height: 80%;
+  width: 100%;
+  grid-area: portrait;
   background-image: url(./image/alex.JPG);
   background-size: contain;
   background-repeat: no-repeat;
-  margin-left: 20%;
+  margin-top: 15%;
+  margin-left: 10%;
+}
+
+.portrait__shadow {
+  width: 66.8%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.underline {
+  width: 35%;
+  height: 2px;
+  position: relative;
+  bottom: 10%;
+  left: 40%;
+  background: #bda182;
 }
 
 /* Price List */
@@ -278,7 +321,6 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #000;
   margin: 0;
   padding: 0;
 }
@@ -319,78 +361,14 @@ a:hover {
   }
 }
 
-@keyframes lines {
+@keyframes slide {
   0% {
-    width: 0;
-    height: 0;
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
+    transform: translateY(0);
   }
-
-  33% {
-    height: 0;
-    width: 90%;
-    border-top-color: #d4af37;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
+  50% {
+    transform: translateY(-20px);
   }
-
-  66% {
-    height: 120%;
-    width: 90%;
-    border-top-color: #d4af37;
-    border-right-color: #d4af37;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-  }
-
   100% {
-    height: 120%;
-    width: 90%;
-    border-top-color: #d4af37;
-    border-right-color: #d4af37;
-    border-bottom-color: #d4af37;
-    border-left-color: #d4af37;
-  }
-}
-
-@keyframes lines2 {
-  0% {
-    width: 0;
-    height: 0;
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-  }
-
-  33% {
-    height: 120%;
-    width: 0;
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: #d4af37;
-  }
-
-  66% {
-    height: 120%;
-    width: 90%;
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: #d4af37;
-    border-left-color: #d4af37;
-  }
-
-  100% {
-    height: 120%;
-    width: 90%;
-    border-top-color: #d4af37;
-    border-right-color: #d4af37;
-    border-bottom-color: #d4af37;
-    border-left-color: #d4af37;
+    transform: translateY(0);
   }
 }
