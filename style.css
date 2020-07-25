@@ -7,6 +7,7 @@
 
 body {
   background-color: #27282a;
+  color: #f2f0eb;
 }
 
 a {
@@ -26,14 +27,14 @@ a:hover {
 /* Navigation */
 .navBar {
   width: 10%;
-  height: 90vh;
+  height: 100vh;
   position: fixed;
   display: flex;
   bottom: 0;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  background-image: linear-gradient(transparent, #000);
+  background-color: #000;
   z-index: 10;
 }
 
@@ -51,7 +52,7 @@ a:hover {
 
 .hamburger {
   padding: 10px;
-  display: inline-block;
+  display: none;
   cursor: pointer;
   background-color: transparent;
   border: 0;
@@ -109,13 +110,8 @@ a:hover {
 
 .navigation {
   height: 50vh;
-  width: 200px;
-  position: absolute;
-  top: 0;
-  left: 0;
+  width: 100%;
   background: #000;
-  transform: translateX(-200px);
-  transition: transform 0.3s 0.1s ease-in-out;
 }
 
 .navigation--active {
@@ -128,42 +124,32 @@ a:hover {
 }
 
 .navigation__item {
-  border-bottom: 1px solid #d4af37;
   text-align: center;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  font-size: 2rem;
-  color: #fff;
+  margin-bottom: 10%;
+  padding-bottom: 10%;
+  font-size: 1.7rem;
+  font-weight: 700;
 }
 
 .navigation__item:hover {
   cursor: pointer;
-  color: #d4af37;
+  color: #d5ba98;
   transition: 0.2s 0.1s ease-in;
 }
 
 .social {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  bottom: 8vh;
-  color: #fff;
-  font-size: 20em;
+  bottom: 3vh;
+  font-size: 13em;
 }
 
 .facebook,
 .instagram {
   position: relative;
-  width: 80px;
-  height: 80px;
-  padding-top: 7px;
+  width: 40px;
+  height: 40px;
   text-align: center;
   overflow: hidden;
-}
-
-.facebook {
-  margin-bottom: 5vh;
 }
 
 .facebook:hover {
@@ -311,42 +297,217 @@ a:hover {
   background: #bda182;
 }
 
+/* Services */
+
+.services {
+  width: 90vw;
+  height: 100vh;
+  display: grid;
+  position: relative;
+  justify-content: space-between;
+  grid-template-columns: 17% 83%;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". services";
+}
+
+.services__title {
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+}
+
+.services__title::after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 52.5vw;
+  height: 2px;
+  top: 5px;
+  background-color: #d5ba98;
+}
+
+.services__grid {
+  display: grid;
+  position: relative;
+  top: 40px;
+  margin: auto;
+  grid-template-columns: repeat(4, 150px);
+  grid-template-rows: repeat(2, 150px);
+  gap: 50px 50px;
+  grid-template-areas: ". . . ." ". . . .";
+  grid-area: services;
+}
+
+.services__tile,
+.light-tile {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.black-tile {
+  background-color: #121310;
+}
+
+.grey-tile {
+  background-color: #d5ba98;
+  color: #121310;
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  transition: transform 0.6s linear;
+  cursor: pointer;
+}
+
+.front {
+  display: block;
+  transform: perspective(500px) rotateY(0deg);
+}
+
+.services__tile .tile__title,
+.light-tile .tile__title {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.front {
+  display: block;
+  transform: perspective(500px) rotateY(0deg);
+}
+
+.first-tile {
+  background-image: url(./image/lot-widokowy.jpg);
+}
+
+.services__tile:hover > .front,
+.light-tile:hover > .front {
+  transform: perspective(500px) rotateY(-180deg);
+  cursor: pointer;
+}
+
+.back {
+  transform: perspective(500px) rotateY(180deg);
+}
+
+.services__tile:hover > .back,
+.light-tile:hover > .back {
+  transform: perspective(500px) rotateY(0deg);
+  cursor: pointer;
+}
+
+.services__tile span,
+.light-tile span {
+  font-size: inherit;
+}
+
+.services__tile::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  border: 2px solid #d5ba98;
+  z-index: -2;
+}
+
+.light-tile::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  border: 2px solid #f2f0eb;
+  z-index: -1;
+}
 /* Price List */
 
 .pricelist {
   width: 100%;
   height: 100vh;
-  position: relative;
+  position: absolute;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .pricelist__title {
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+}
+
+.pricelist__title::after {
+  content: "";
   display: block;
-  color: #fff;
-  font-size: 3rem;
-  margin-top: 2%;
+  position: relative;
+  width: 52.5vw;
+  height: 2px;
+  top: 5px;
+  background-color: #d5ba98;
 }
 
 .pricelist__column {
-  height: 80%;
-  width: 40%;
+  height: 70%;
+  width: 50%;
+  position: relative;
+  top: 10vh;
+  left: 10%;
   display: grid;
-  grid-template-columns: 80% 20%;
+  grid-template-columns: 70% 30%;
   grid-template-rows: repeat(auto, 1fr);
-  margin: auto;
 }
+
+.pricelist__column::after {
+  content: "";
+  height: 2px;
+  width: 70%;
+  display: block;
+  position: relative;
+  top: -15px;
+  left: 43%;
+  background-color: #d5ba98;
+}
+.service {
+  background-color: #121310;
+}
+
+.price {
+  color: #d5ba98;
+}
+
+.service,
 .price {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  border-bottom: 1px solid #d4af37;
-  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.longer-box {
+  padding-bottom: 7%;
 }
 
 /* Animations */
