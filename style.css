@@ -404,7 +404,7 @@ a:hover {
 .third-tile {
   background-image: url(./image/skinFade.JPG);
   background-size: cover;
-  background-position: top;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
