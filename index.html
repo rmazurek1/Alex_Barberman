@@ -61,13 +61,13 @@
           data-aos-delay="1000"
           data-aos-easing="ease-in-out"
         >
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit
-          reiciendis dolorem quaerat obcaecati in, molestias rem exercitationem
-          voluptate? Quos quas magnam neque sunt sed soluta ut quidem temporibus
-          corrupti nihil?Voluptas unde inventore expedita ab odit nihil alias
-          iure eos blanditiis. Officia sint commodi, esse quia tempora ullam
-          deleniti repudiandae cupiditate. Eos vero dolorem mollitia dolore
-          itaque libero iusto repellendus.
+          W Polsce jestem już od paru długich lat, a pochodzę z Kurdystanu.
+          Życie prowadziło mnie różnymi ścieżkami ale gdy pierwszy raz wziąłem
+          nożyczki do ręki, od razu wiedziałem że to zawód dla mnie. Barbering
+          stał się moją pasją, którą codziennie pielęgnuje. Do każdego klienta
+          podchodzę indywidualnie, zawsze daje z siebie wszystko żeby sprostać
+          oczekiwaniom. Dla mnie zadowolenie i uśmiech klienta jest podstawą i
+          jest moim paliwem bez którego daleko nie pojadę.
         </div>
         <div class="sign"></div>
         <div
@@ -103,7 +103,7 @@
           <div class="front black-tile">
             <h4 class="tile__title">Strzyżenie <span>klasyczne</span></h4>
           </div>
-          <div class="back grey-tile first-tile"></div>
+          <div class="back grey-tile second-tile"></div>
         </div>
 
         <!-- 3rd -->
@@ -111,7 +111,7 @@
           <div class="front black-tile">
             <h4 class="tile__title">Skin <span>Fade</span></h4>
           </div>
-          <div class="back grey-tile first-tile"></div>
+          <div class="back grey-tile third-tile"></div>
         </div>
 
         <!-- 4th -->
@@ -119,7 +119,7 @@
           <div class="front grey-tile">
             <h4 class="tile__title">Trymowanie <span>brody</span></h4>
           </div>
-          <div class="back grey-tile first-tile"></div>
+          <div class="back grey-tile fourth-tile"></div>
         </div>
 
         <!-- 5th -->
@@ -127,7 +127,7 @@
           <div class="front grey-tile">
             <h4 class="tile__title">Broda <span>SPA</span></h4>
           </div>
-          <div class="back grey-tile first-tile"></div>
+          <div class="back grey-tile fifth-tile"></div>
         </div>
 
         <!-- 6th -->
@@ -138,7 +138,7 @@
               <span>Trymowanie</span> <span>brody</span>
             </h4>
           </div>
-          <div class="back grey-tile first-tile"></div>
+          <div class="back grey-tile sixth-tile"></div>
         </div>
 
         <!-- 7th -->
@@ -149,7 +149,7 @@
               <span>Broda</span> <span>SPA</span>
             </h4>
           </div>
-          <div class="back grey-tile first-tile"></div>
+          <div class="back grey-tile seventh-tile"></div>
         </div>
 
         <!-- 8th -->
@@ -160,7 +160,7 @@
               <span>SPA</span>
             </h4>
           </div>
-          <div class="back grey-tile first-tile"></div>
+          <div class="back grey-tile eighth-tile"></div>
         </div>
       </div>
     </section>
@@ -187,6 +187,25 @@
         <p class="price longer-box">100zł</p>
       </div>
     </section>
+
+    <!-- Contact Section -->
+
+    <section class="contact-section">
+      <div class="contact-grid">
+        <div class="empty__contact"></div>
+        <div class="map">
+          <div class="map__address">
+            <div class="address__graphic"></div>
+            <div class="address__info">
+              <span class="info__name">Alex Barber</span>
+              <span class="info__address">Legnicka 32</span>
+            </div>
+          </div>
+          <div class="map-api" id="map"></div>
+        </div>
+        <div class="contact"></div>
+      </div>
+    </section>
   </body>
   <script
     src="https://kit.fontawesome.com/4e96276faa.js"
@@ -194,4 +213,10 @@
   ></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
+  <script
+    async
+    defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGN30kPcSer9L4TUoBVZb5U9HJmpwPoLc&callback=initMap"
+    type="text/javascript"
+  ></script>
 </html>

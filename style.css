@@ -390,7 +390,54 @@ a:hover {
 }
 
 .first-tile {
-  background-image: url(./image/lot-widokowy.jpg);
+  background-image: url(./image/);
+}
+
+.second-tile {
+  background-image: url(./image/klasyczne.JPG);
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: 50%;
+  background-repeat: no-repeat;
+}
+
+.third-tile {
+  background-image: url(./image/skinFade.JPG);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.fourth-tile {
+  background-image: url(./image/trymerownie.JPG);
+  background-size: 200%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.fifth-tile {
+  background-image: url(./image/brodaSpa.jpg);
+  background-size: 160%;
+  background-position: 40% 30%;
+  background-repeat: no-repeat;
+}
+
+.sixth-tile {
+  background-image: url(./image/klasyTrym.JPG);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.seventh-tile {
+  background-image: url(./image/);
+}
+
+.eighth-tile {
+  background-image: url(./image/fadeSpa.JPG);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .services__tile:hover > .front,
@@ -440,7 +487,7 @@ a:hover {
 .pricelist {
   width: 100%;
   height: 100vh;
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -510,6 +557,78 @@ a:hover {
   padding-bottom: 7%;
 }
 
+/* Contact Section */
+
+.contact-section {
+  width: 100%;
+  height: 100vh;
+  background-color: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-grid {
+  height: 100vh;
+  position: relative;
+  display: grid;
+  grid-template-columns: 18% 42% 42%;
+  grid-template-rows: 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "empty__contact map contact" "empty__contact map contact";
+}
+
+.empty__contact {
+  grid-area: empty__contact;
+}
+
+.map {
+  grid-area: map;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.map__address {
+  width: 40%;
+  height: 20%;
+  position: relative;
+  left: 50%;
+}
+
+.address__graphic {
+  width: 100%;
+  height: 40%;
+  background-image: url(./image/address.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.address__info {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-items: center;
+  align-content: space-between;
+  text-align: center;
+  font-size: 2.6rem;
+}
+
+.info__address {
+  color: #bda182;
+}
+
+.map-api {
+  width: 90%;
+  height: 70%;
+  border: 1px solid #121310;
+}
+
+.contact {
+  grid-area: contact;
+}
 /* Animations */
 
 @keyframes logo {
